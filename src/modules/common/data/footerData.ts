@@ -1,5 +1,8 @@
 export const quickLinks = [
-  { label: "Home", href: "/" },
+    { label: "Start", href: "/#hero" },
+    { label: "Features", href: "/#features" },
+    { label: "Entry Points", href: "/#cta" },
+    { label: "Connect", href: "/#contact" },
 ]
 
 export const socialLinks = [
@@ -12,9 +15,9 @@ export const brandInfo = {
   description:
     "15-minute talk show episodes that uncover hidden leverage in your business. Your entry point into the studio, infra, and network powering real builder growth through apps that actually represent your business. Made possible by 9Figures, FTLP, and GVN Nexus.",
   partners: [
-    { src: "/assets/logo-9figures.svg", alt: "9Figures" },
-    { src: "/assets/logo-ftlp.svg", alt: "FTLP" },
-    { src: "/assets/logo-gvn-nexus.svg", alt: "GVN Nexus" },
+    { src: "/assets/partnerlogo1.svg", alt: "9Figures" },
+    { src: "/assets/partnerlogo2.svg", alt: "FTLP" },
+    { src: "/assets/partnerlogo3.svg", alt: "GVN Nexus" },
   ],
 }
 

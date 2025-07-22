@@ -1,14 +1,16 @@
-import React from "react"
+"use client"
+
+import React, { useState } from "react"
 import Link from "next/link"
-import { useState } from "react"
 import { BrandLogo } from "./BrandLogo"
+import { headerData } from "~/modules/common/data/headerData"
 import { Button } from "~/components/ui/button"
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="flex items-center justify-between h-16 px-6 border-b bg-background text-foreground">
+    <header className="flex items-center justify-between h-16 px-6 border-b bg-background text-foreground relative">
       <Link href="/" className="flex items-center gap-2">
         <BrandLogo className="h-6 w-auto" />
       </Link>
@@ -23,14 +25,19 @@ export function Header() {
         </button>
       </div>
 
-      {/* Optional: dropdown panel shown when menuOpen = true */}
       {menuOpen && (
         <div className="absolute top-16 right-6 bg-popover border border-border rounded-md shadow-md p-4 z-50 min-w-[200px]">
           <nav className="flex flex-col gap-2">
-            <Link href="/" className="hover:text-primary">Home</Link>
-            <Link href="/about" className="hover:text-primary">About</Link>
-            <Link href="/contact" className="hover:text-primary">Contact</Link>
-            {/* Add more as needed */}
+            {headerData.quickLinks.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                className="hover:text-primary"
+                onClick={() => setMenuOpen(false)} // optional: auto-close
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}

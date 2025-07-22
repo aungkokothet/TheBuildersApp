@@ -1,8 +1,8 @@
 import React from "react"
-import { navbarData } from "~/modules/common/data/headerData"
+import { headerData } from "~/modules/common/data/headerData"
 
 export function BrandLogo({ className }: { className?: string }) {
-  const { src, alt, className: defaultClass, height } = navbarData.logo
+  const { src, alt, className: defaultClass, height } = headerData.logo
 
   return (
     <img

@@ -1,18 +1,19 @@
 "use client"
-import React from "react"
 
+import React from "react"
 import Link from "next/link"
-import { tiers } from "../data/tiers"
 import { Button } from "~/components/ui/button"
+import { tiers, ctaSection } from "../data/tiers"
 
 export function CTASection() {
   return (
-    <section className="w-full bg-background py-20 border-t border-border">
+    <section
+      id="cta"
+      className="w-full bg-background py-20 border-t border-border scroll-mt-16"
+    >
       <div className="container px-4 mx-auto max-w-6xl text-center">
-        <h2 className="text-3xl font-bold mb-4">Choose Your Entry Point</h2>
-        <p className="text-muted-foreground mb-12">
-          The Builders’ Stack offers a way in for every builder — from reflection to launch.
-        </p>
+        <h2 className="text-3xl font-bold mb-4">{ctaSection.heading}</h2>
+        <p className="text-muted-foreground mb-12">{ctaSection.subheading}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {tiers.map(({ title, tagline, price, features }) => (
@@ -29,7 +30,7 @@ export function CTASection() {
                 ))}
               </ul>
               <Button asChild className="w-full">
-                <Link href="#contact">Get Started</Link>
+                <Link href="/#contact">Get Started</Link>
               </Button>
             </div>
           ))}

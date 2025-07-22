@@ -1,3 +1,11 @@
+// src/modules/landing/data/tiers.ts
+
+export const ctaSection = {
+  heading: "Choose Your Entry Point",
+  subheading:
+    "The Builders’ Stack offers a way in for every builder — from reflection to launch.",
+}
+
 export const tiers = [
   {
     title: "Free",
